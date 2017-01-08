@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>\<style type="text/css">
+#podezd
+{
+  color: green;
+  font-weight: bold;
+}
+#etag
+{
+color:red;
+}
+</style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+     № квартиры   <input id="room" type="text" size="40"> 
+<div>
+<span id="podezd">1</span>подъезд <span id="etag">1</span> этаж
+</div> 
+<script>
+document.getElementById('room').addEventListener("keyup", ()=>{
+var room = document.getElementById('room').value;
+var podezd = Math.floor((room-1) / 36)+1;
+document.getElementById('podezd').innerHTML = podezd;
+document.getElementById('etag').innerHTML = Math.floor(( room-(36*(podezd-1))-1)/4)+1;
+
+});
+</script>
+  </body>
+</html
